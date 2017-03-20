@@ -74,7 +74,7 @@ public:
 	}
 
 	float getPotential() {
-
+		return cellPotential;
 	}
 };
 
@@ -123,7 +123,16 @@ public:
 	}
 };
 
+class Amacrine : public Neuron {
+
+public:
+	Amacrine() {}
+};
 class Ganglion : public Neuron {
+
+	std::vector<Bipolar> bipolarInput;
+	std::vector<Amacrine> amacrineInput;
+
 public:
 	Ganglion() {}
 };
